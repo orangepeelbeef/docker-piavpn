@@ -87,8 +87,16 @@ chown -R $DELUGE_UID:$DELUGE_GID /app/deluge
 chown -R $DELUGE_UID:$DELUGE_GID /torrents
 
 INSIDE_NET=`ip -o -f inet addr show dev eth0 | awk '{ print $4 }'`
-echo "acl my_subnet src $INSIDE_NET" >> /etc/squid/squid.conf
-echo "http_access allow my_subnet" >> /etc/squid/squid.conf
+cat >> /etc/squid/squid.conf << EOL
+# our subnet
+acl my_subnet src $INSIDE_NET
+http_access allow my_subnet
+
+
+http_access allow localnet
+http_access allow localhost
+http_access deny all
+EOL
 
 # spin it up
 exec /usr/sbin/runsvdir-start
