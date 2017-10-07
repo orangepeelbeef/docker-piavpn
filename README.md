@@ -6,6 +6,7 @@ Ubuntu:1404 based Privateinternetaccess.com vpn with torrents/proxy (openvpn, de
 Complete run command with all options
 
     docker run -d -p 8112:8112 -p 1080:1080 \
+        -p 3128:3128 \
         --name vpn \
         --dns=8.8.8.8 \
         --cap-add=NET_ADMIN \    
@@ -18,7 +19,7 @@ Complete run command with all options
         -e PIA_PASS=<password> \
         -e PIA_CLIENT=<optionalpiaclient> \
         -e PIA_GATEWAY=piavpnaddress.com \        
-        jbogatay/piavpn
+        orangepeelbeef/piavpn
 
 
 Change directory mappings as appropriate (delugeconfig, torrents)
