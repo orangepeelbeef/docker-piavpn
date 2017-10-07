@@ -10,7 +10,7 @@ CMD ["/app/start.sh"]
 RUN echo "APT::Install-Recommends 0;" >> /etc/apt/apt.conf.d/01norecommends &&\
     echo "APT::Install-Suggests 0;" >> /etc/apt/apt.conf.d/01norecommends &&\
     apt-get update &&\
-    apt-get install -qy net-tools openvpn dante-server deluged deluge-web deluge-console runit curl ca-certificates squid&&\
+    apt-get install -qy iproute2 openvpn dante-server deluged deluge-web deluge-console runit curl ca-certificates squid&&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
