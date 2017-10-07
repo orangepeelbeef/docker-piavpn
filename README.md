@@ -1,7 +1,7 @@
 docker-piavpn
 ================
 
-Ubuntu:1404 based Privateinternetaccess.com vpn with torrents/proxy (openvpn, deluged, deluge-web, dante-server)
+Ubuntu:1604 based Privateinternetaccess.com vpn with torrents/proxy (openvpn, deluged, deluge-web, dante-server, squid)
 
 Complete run command with all options
 
