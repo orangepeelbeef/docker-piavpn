@@ -21,6 +21,8 @@ then
   deluge-console -c /app/deluge "config --set listen_interface $LOCAL_IP"
 else
   echo ERROR: Port $PORT is not an integer
+  DEBUG=`curl -s -d "user=$USERNAME&pass=$PASSWORD&client_id=$CLIENTID&local_ip=$LOCAL_IP" https://www.privateinternetaccess.com/vpninfo/port_forward_assignment`
+  echo "DEBUG: ${DEBUG}" 
   exit 1
 fi
 
