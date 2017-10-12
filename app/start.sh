@@ -76,10 +76,9 @@ if [ ! -f /app/runonce ]; then
 	groupadd --gid $DELUGE_GID torrents || echo "Using existing group $DELUGE_GID"
 	useradd --gid $DELUGE_GID --no-create-home --uid $DELUGE_UID torrents
 
-  INSIDE_NET=`ip -o -f inet addr show dev eth0 | awk '{ print $4 }'`
   cat >> /etc/squid/squid.conf << EOL
 # our subnet
-acl my_subnet src $INSIDE_NET
+acl my_subnet src $HOST_SUBNET
 http_access allow my_subnet
 http_access allow localhost
 http_access deny all
