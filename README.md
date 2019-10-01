@@ -1,3 +1,11 @@
+DEPRECATED IN FAVOR OF
+[pia-proxybox](https://github.com/orangepeelbeef/pia-proxybox/)
+
+
+
+
+
+
 docker-piavpn
 ================
 
